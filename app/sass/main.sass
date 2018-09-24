@@ -33,17 +33,8 @@ body input:required:valid,
 body textarea:required:valid
 	color: #666
 
-html, body
-	height: 100%
-
-body
-	font-size: 16px
-	min-width: 320px
-	position: relative
-	line-height: 1.65
-	font-family: $default-font
-	overflow-x: hidden
-
+a
+	outline: none
 .img-responsive
 	display: block
 	max-width: 100%
@@ -53,4 +44,458 @@ body
 	text-align: center
 
 
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+	margin: 0
+	padding: 0
+	border: 0
+	font-size: 100%
+	font: inherit
+	vertical-align: baseline
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+	display: block
+
+body
+	font-size: 17px
+	min-width: 320px
+	position: relative
+	line-height: normal
+	font-family: $lato-regular
+	overflow-x: hidden
+
+ol, ul
+	list-style: none
+
+blockquote, q
+	quotes: none
+
+blockquote:before, blockquote:after, q:before, q:after
+	content: ''
+	content: none
+
+table
+	border-collapse: collapse
+	border-spacing: 0
+.container
+	max-width: 1620px
+	width: 100%
+	padding: 0 10px
+	margin: 0 auto
+
+.header
+	background: #0f1117
+	padding: 18px 0
+	&-flex
+		display: flex
+		align-items: center
+		justify-content: space-between
+		color: $white
+	&-left
+		padding-left: 87px
+		background: url(../img/clock.svg) no-repeat left 60px center
+		background-size: 14px 14px
+		color: $white
+		text-transform: uppercase
+		font-size: 13px
+	&-right
+		display: flex
+		justify-content: flex-end
+		align-items: center
+	&-lang
+		font-family: $bebas-neueregular
+		margin: 0 60px
+		&-link
+			color: #ffffff
+			text-decoration: none
+			transition: color .5s ease
+			margin-left: 15px
+			text-align: center
+			&.active, &:hover
+				color: $accent
+	&-phone
+		&-number
+			color: $white
+			text-decoration: none
+			padding-left: 30px
+			background: url(../img/phone.svg) no-repeat left 5px center
+			background-size: 15px 15px
+			margin-left: 35px
+			transition: color .5s ease
+			text-transform: uppercase
+			font-size: 13px
+			&:hover
+				color: #ffffff
+.cart
+	fill: #57585c
+.slide
+	background: url(../img/main-bg.png) no-repeat top center
+	background-size: cover
+	&-menu
+		display: flex
+		//justify-content: space-between
+.menu
+	position: relative
+	&-item
+		border: 1px solid rgba(6, 189, 214, 0.1)
+		border-right: none
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-shrink: 0
+		&:hover
+			.menu-item-link:not(.menu-item-link_end)
+				color: #ffffff
+				background: #1c1e25
+		&-logo
+			width: 85px
+		&-link
+			padding: 45px 30px
+			color: $accent
+			text-transform: uppercase
+			font-family: $bebas-neueregular
+			text-decoration: none
+			transition: color .5s ease
+			height: 100%
+			letter-spacing: 1.5px
+			&_first
+				padding: 0 50px
+				display: flex
+				align-items: center
+				height: 100%
+			&_cart
+				padding: 45px
+			&_end
+				&:hover
+					color: #ffffff
+					background: #1c1e25
+			&:hover
+				.fill-hover
+					fill: #ffffff
+		&_custom
+			border-left: none
+			flex-grow: 1
+			justify-content: flex-end
+		&-search
+			width: 15px
+			height: 15px
+		&-cart
+			width: 18px
+			height: 18px
+	&-hide
+		position: absolute
+		display: none
+		top: 108px
+		left: 0px
+		width: 763px
+		background: #1c1e25
+		font-family: $bebas-neueregular
+		z-index: 2
+		&-flex
+			display: flex
+			justify-content: flex-start
+	&-left
+		flex-shrink: 0
+		&-list
+			min-width: 185px
+			position: relative
+		&-item
+			&:hover
+				.menu-right-list
+					display: block
+			&:hover
+				.menu-left-link
+					background: #282930
+					color: #ffffff
+					text-decoration: underline
+		&-link
+			display: block
+			padding: 10px 10px 10px 30px
+			color: $white
+			text-decoration: none
+	&-right
+		width: 100%
+		position: relative
+		overflow: hidden
+		&-img
+			position: absolute
+			left: 0
+			top: 0
+			font-size: 0
+			opacity: 0
+			display: flex
+			align-items: flex-end
+			justify-content: flex-end
+			width: 100%
+			height: 100%
+			&.active
+				opacity: 1
+		&-list
+			position: absolute
+			left: 185px
+			top: 0
+			padding: 10px 40px
+			display: none
+			z-index: 1
+		&-link
+			color: $white
+			text-decoration: none
+			padding: 15px 0
+			display: block
+			&:hover
+				color: #ffffff
+				text-decoration: underline
+.fill-hover
+	transition: fill .5s ease
+.menu-right-img
+	&_mouse
+		background: url(../img/mouse.jpg) no-repeat bottom right
+		background-size: cover
+	&_keyboard
+		background: url(../img/keyboard.png) no-repeat center right
+		background-size: content
+	&_head
+		background: url(../img/head.png) no-repeat center right 100px
+		background-size: 200px
+.hide-hover
+	position: relative
+	&:hover
+		.menu-hide
+			display: block
+.slider
+	position: relative
+	background: #080a0f
+	&-item
+		position: relative
+		&:after
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			content: ''
+			background: url(../img/mask.png) no-repeat right center
+			background-size: cover
+	&-info
+		position: absolute
+		top: 130px
+		left: 185px
+		z-index: 1
+		width: 430px
+	&-title
+		font-size: 68px
+		line-height: 60px
+		color: #fff
+		font-family: $bebas-neueregular
+		letter-spacing: 7.5px
+	&-description
+		font-size: 18px
+		color: $white
+		margin-top: 20px
+	&-more
+		font-size: 24px
+		color: #ffffff
+		background: #7e14d6
+		width: 50px
+		height: 50px
+		border-radius: 50%
+		display: flex
+		align-items: center
+		justify-content: center
+		cursor: pointer
+		margin-top: 40px
+		transition: all .5s
+		text-decoration: none
+		&:hover
+			background: #aa1ed4
+.slider-item
+	outline: none
+	width: 100%
+	height: 690px
+	&_first
+		background: url(../img/slide1.jpg) no-repeat center right
+		background-size: cover
+	&_second
+		background: url(../img/slide2.jpg) no-repeat bottom right
+		background-size: cover
+.slick-dots
+	width: 110px
+	left: 4%
+	bottom: 50px
+.slick-dots li button:before
+	color: #6a6b6e
+	font-size: 8px
+	border: 1px solid transparent
+	border-radius: 50%
+	transition: all .5s ease
+	left: -1px
+.slick-dots li.slick-active button:before
+	color: #7e14d6
+	border: 1px solid #7e14d6
+.slick-dots li
+	margin: 0 2px
+.slick-dotted.slick-slider
+	margin-bottom: 0
+.slick-list, .slick-slider
+	overflow: hidden
+.categories
+	background: #0f1117
+	&-row
+		display: flex
+		justify-content: space-between
+		padding: 20px
+	&-item
+		width: 505px
+		width: calc(33% - 5px)
+		&_first
+			background: #7e14d6
+		&_second
+			background: #1197e4
+		&_third
+			background: #06a8dd
+	&-slider
+		&-item
+			outline: none
+			height: 600px
+			width: 100%
+			text-align: center
+			padding: 60px
+			position: relative
+		&-img
+			width: auto
+			position: absolute
+			left: 50%
+			transform: translateX(-50%)
+			bottom: 0
+
+			//&_second
+			//	background: #7e14d6 url(../img/slider-1.png) no-repeat bottom center
+			//&_third
+			//	background: #7e14d6 url(../img/slider-1.png) no-repeat bottom center
+		&-hover
+			width: 100%
+			height: 100%
+			position: relative
+			z-index: 3
+			&:hover
+				.categories-slider-add
+					opacity: 1
+		&-type
+			color: $white
+			background: url(../img/arrow-more.svg) no-repeat right 5px center
+			background-size: 6px 8px
+			padding-right: 20px
+			text-decoration: none
+			font-family: $bebas-neueregular
+			font-size: 16px
+			transition: background-position .5s ease
+			&:hover
+				background-position: right 0px center
+		&-name
+			color: #ffffff
+			margin-top: 20px
+			font-family: $bebas-neuebold
+			font-size: 24px
+		&-add
+			width: 50px
+			height: 50px
+			border-radius: 50%
+			color: #fff
+			background: #11bae4
+			font-size: 24px
+			display: flex
+			align-items: center
+			justify-content: center
+			position: absolute
+			left: calc(50% - 25px)
+			bottom: 20px
+			cursor: pointer
+			transition: all .5s ease
+			opacity: 0
+			z-index: 2
+			text-decoration: none
+			&:hover
+				background: #1197e4
+
+.categories-slider .slick-prev, .categories-slider .slick-next
+	width: 60px
+	height: 110px
+	z-index: 1
+.categories-slider .slick-prev
+	border: 1px solid #9d4de0
+	border-left: none
+	left: -60px
+	transition: all .5s ease
+	&:before
+		transform: scale(-1)
+		background: url(../img/arrow-next.svg) no-repeat center
+		background-size: 13px 15px
+	&:hover
+		background: rgba(63, 65, 69, 0.2)
+		border-color: rgba(63, 65, 69, 0.2)
+.categories-slider .slick-next
+	border: 1px solid #9d4de0
+	border-right: none
+	right: -60px
+	transition: all .5s ease
+	&:before
+		background: url(../img/arrow-next.svg) no-repeat center
+		background-size: 13px 15px
+	&:hover
+		border-color: rgba(63, 65, 69, 0.2)
+		background: rgba(63, 65, 69, 0.2)
+.categories-slider .slick-prev:before, .categories-slider .slick-next:before
+	content: ''
+	height: 100%
+	width: 100%
+	display: block
+.categories-item:hover
+	.categories-slider .slick-next
+		right: 0
+	.categories-slider .slick-prev
+		left: 0
+.sale
+	background: #13151c url(../img/sale-bg.png) no-repeat left 200px bottom -100px
+	background-size: contain
+	padding-bottom: 50px
+	&-flex
+		display: flex
+		justify-content: flex-end
+	&-info
+		font-family: $bebas-neueregular
+		text-align: right
+		margin-right: 180px
+		width: 350px
+		display: flex
+		flex-direction: column
+		align-items: flex-end
+		&-stick
+			color: #ffffff
+			background: #d82a36
+			display: inline-block
+			padding: 16px 20px
+			letter-spacing: 1.5px
+			font-size: 16px
+		&-title
+			font-size: 68px
+			line-height: 60px
+			color: #ffffff
+			margin-top: 90px
+			letter-spacing: 7px
+			margin-right: -8px
+		&-description
+			font-size: 14px
+			color: $white
+			margin-top: 20px
+			font-family: $lato-regular
+		&-price
+			color: #06c8f4
+			display: flex
+			align-items: flex-start
+			margin-top: 20px
+		&-number
+			font-size: 35px
+			letter-spacing: 4px
+		&-currency
+			font-size: 18px
+			margin-top: 3px
 @import "media" // Всегда в конце
