@@ -750,8 +750,16 @@ table
 			align-items: center
 			justify-content: center
 			transition: all .5s ease
+			&_fb
+				&:hover
+					background: #3b5998
+			&_vk
+				&:hover
+					background: #6383a8
+			&_inst
+				&:hover
+					background: #e4405f
 			&:hover
-				background: #6383a8
 				.footer-social-svg path, .footer-social-svg rect
 					fill: #fff
 		&-list
@@ -826,14 +834,15 @@ table
 		&-slide
 			position: relative
 			transition: height .5s ease
+			min-height: 470px
 		&-overlay
 			background: transparent
 			position: fixed
 			top: 0
 			width: 100%
 			height: 100vh
-			overflow-y: scroll
 			left: -100%
+			overflow-y: scroll
 			transition: left .5s ease
 			&.active
 				left: 0
@@ -845,8 +854,7 @@ table
 			top: 0
 			padding: 40px
 			transition: left .5s ease
-			&.active
-				left: 0
+			overflow-y: auto
 		&-top
 			display: flex
 			justify-content: space-between
@@ -885,8 +893,11 @@ table
 			top: 0
 			width: 100%
 			transition: left .5s ease
+			height: 0
+			overflow: hidden
 			&.active
 				left: 0
+				height: auto
 		&-item, &-link
 			color: $accent
 			font-family: $bebas-neueregular
