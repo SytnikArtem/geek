@@ -11,21 +11,31 @@
 		box-sizing: border-box
 
 *::-webkit-input-placeholder
-	color: #666
-	opacity: 1
-
-*:-moz-placeholder
-	color: #666
+	color: #fff
 	opacity: 1
 
 *::-moz-placeholder
-	color: #666
+	color: #fff
 	opacity: 1
 
-*:-ms-input-placeholder
-	color: #666
+*::-moz-placeholder
+	color: #fff
 	opacity: 1
-
+.mobile-left-input::-webkit-input-placeholder
+	color: #75767a
+	opacity: 1
+.mobile-left-input::-moz-placeholder
+	color: #75767a
+	opacity: 1
+.mobile-left-input::-moz-placeholder
+	color: #75767a
+	opacity: 1
+input:focus::-webkit-input-placeholder
+	color: transparent
+input:focus::-moz-placeholder
+	color: transparent
+input:focus::-ms-input-placeholder
+	color: transparent
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
 	color: #666
@@ -43,7 +53,8 @@ a
 .text-center
 	text-align: center
 
-
+.text-line
+	text-decoration: line-through
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
 	margin: 0
 	padding: 0
@@ -62,6 +73,7 @@ body
 	line-height: normal
 	font-family: $lato-regular
 	overflow-x: hidden
+	background: #0f1117
 
 ol, ul
 	list-style: none
@@ -150,6 +162,7 @@ table
 			width: 85px
 		&-link
 			padding: 45px 30px
+			cursor: pointer
 			color: $accent
 			text-transform: uppercase
 			font-family: $bebas-neueregular
@@ -157,6 +170,8 @@ table
 			transition: color .5s ease
 			height: 100%
 			letter-spacing: 1.5px
+			display: flex
+			align-items: center
 			&_first
 				padding: 0 50px
 				display: flex
@@ -196,7 +211,7 @@ table
 	&-left
 		flex-shrink: 0
 		&-list
-			min-width: 185px
+			min-width: 212px
 			position: relative
 		&-item
 			&:hover
@@ -285,26 +300,27 @@ table
 		font-size: 68px
 		line-height: 60px
 		color: #fff
-		font-family: $bebas-neueregular
+		font-family: $bebas-neuebold
 		letter-spacing: 7.5px
 	&-description
 		font-size: 18px
 		color: $white
 		margin-top: 20px
 	&-more
-		font-size: 24px
+		font-size: 22px
 		color: #ffffff
 		background: #7e14d6
 		width: 50px
 		height: 50px
 		border-radius: 50%
-		display: flex
-		align-items: center
-		justify-content: center
+		display: block
+		text-align: center
+		line-height: 50px
 		cursor: pointer
 		margin-top: 40px
 		transition: all .5s
 		text-decoration: none
+		font-family: sans-serif
 		&:hover
 			background: #aa1ed4
 .slider-item
@@ -355,26 +371,20 @@ table
 	&-slider
 		&-item
 			outline: none
-			height: 600px
 			width: 100%
 			text-align: center
-			padding: 60px
+			//padding-top: 60px
 			position: relative
 		&-img
-			width: auto
-			position: absolute
-			left: 50%
-			transform: translateX(-50%)
-			bottom: 0
-
-			//&_second
-			//	background: #7e14d6 url(../img/slider-1.png) no-repeat bottom center
-			//&_third
-			//	background: #7e14d6 url(../img/slider-1.png) no-repeat bottom center
+			max-width: 100%
+			height: auto
+			margin: 0 auto
 		&-hover
 			width: 100%
 			height: 100%
-			position: relative
+			position: absolute
+			top: 60px
+			left: 0
 			z-index: 3
 			&:hover
 				.categories-slider-add
@@ -401,13 +411,13 @@ table
 			border-radius: 50%
 			color: #fff
 			background: #11bae4
-			font-size: 24px
+			font-size: 20px
 			display: flex
 			align-items: center
 			justify-content: center
 			position: absolute
 			left: calc(50% - 25px)
-			bottom: 20px
+			bottom: 140px
 			cursor: pointer
 			transition: all .5s ease
 			opacity: 0
@@ -421,7 +431,7 @@ table
 	height: 110px
 	z-index: 1
 .categories-slider .slick-prev
-	border: 1px solid #9d4de0
+	border: 1px solid rgba(255, 255, 255, 0.2)
 	border-left: none
 	left: -60px
 	transition: all .5s ease
@@ -430,10 +440,9 @@ table
 		background: url(../img/arrow-next.svg) no-repeat center
 		background-size: 13px 15px
 	&:hover
-		background: rgba(63, 65, 69, 0.2)
-		border-color: rgba(63, 65, 69, 0.2)
+		background: rgba(255, 255, 255, 0.2)
 .categories-slider .slick-next
-	border: 1px solid #9d4de0
+	border: 1px solid rgba(255, 255, 255, 0.2)
 	border-right: none
 	right: -60px
 	transition: all .5s ease
@@ -441,8 +450,7 @@ table
 		background: url(../img/arrow-next.svg) no-repeat center
 		background-size: 13px 15px
 	&:hover
-		border-color: rgba(63, 65, 69, 0.2)
-		background: rgba(63, 65, 69, 0.2)
+		background: rgba(255, 255, 255, 0.2)
 .categories-slider .slick-prev:before, .categories-slider .slick-next:before
 	content: ''
 	height: 100%
@@ -454,7 +462,7 @@ table
 	.categories-slider .slick-prev
 		left: 0
 .sale
-	background: #13151c url(../img/sale-bg.png) no-repeat left 200px bottom -100px
+	background: #13151c url(../img/sale-bg.png) no-repeat left 5% bottom -100px
 	background-size: contain
 	padding-bottom: 50px
 	&-flex
@@ -483,6 +491,7 @@ table
 			letter-spacing: 7px
 			margin-right: -8px
 			width: 100%
+			font-family: $bebas-neuebold
 		&-description
 			font-size: 14px
 			color: $white
@@ -500,4 +509,413 @@ table
 		&-currency
 			font-size: 18px
 			margin-top: 3px
+.news
+	&-row
+		display: flex
+		justify-content: space-between
+		padding: 20px 20px 0 20px
+	&-item
+		width: calc(25% - 15px)
+		padding: 0px 10px 20px
+		background: #13151c radial-gradient(#474950, rgba(71, 73, 80, 0))
+		transition: all .5s ease
+		position: relative
+		&:hover
+			background: #7e14d6
+			.news-item-add
+				opacity: 1
+		&_hide
+			&:after
+				content: ''
+				position: absolute
+				left: 0
+				top: 0
+				width: 100%
+				height: 100%
+				background: rgba(0, 0, 0, 0.5)
+			&:hover
+				background: #13151c radial-gradient(#474950, rgba(71, 73, 80, 0))
+				.news-item-add
+					opacity: 0
+		&-img
+			max-width: 100%
+			height: auto
+			display: block
+			margin: 0 auto
+			max-height: 340px
+		&-info
+			text-align: center
+			color: #ffffff
+			margin-bottom: 40px
+			font-family: $bebas-neueregular
+			//position: absolute
+			left: 0
+			top: 0
+			width: 100%
+		&-stick
+			font-size: 16px
+			background: #8b9f03
+			display: inline-block
+			padding: 10px 25px
+		&-name
+			font-size: 24px
+			margin-top: 20px
+			letter-spacing: 2.5px
+			font-family: $bebas-neuebold
+			&_big
+				margin-top: 40px
+		&-number
+			letter-spacing: 1.5px
+		&-price
+			color: #06c8f4
+			margin-top: 15px
+			font-size: 20px
+			display: flex
+			align-items: center
+			justify-content: center
+			&-flex
+				display: flex
+				align-items: flex-start
+				justify-content: center
+			&_red
+				color: #f15e1d
+			&_white
+				color: #fff
+		&-currency
+			font-size: 12px
+			margin-top: 3px
+		&-description
+			padding-left: 10px
+			letter-spacing: 1.5px
+			font-size: 14px
+		&-add
+			height: 50px
+			min-width: 50px
+			border-radius: 25px
+			box-shadow: 0 10px 40px rgba(17, 17, 17, 0.4)
+			position: absolute
+			left: 50%
+			transform: translateX(-50%)
+			bottom: 60px
+			background: #11bae4 url(../img/cart-check.svg) no-repeat left 17px center
+			background-size: 15px 18px
+			cursor: pointer
+			display: flex
+			align-items: center
+			justify-content: flex-end
+			transition: opacity .5s ease
+			opacity: 0
+			&:hover
+				.news-item-text
+					width: 70px
+		&-text
+			width: 0
+			overflow: hidden
+			margin-left: 50px
+			white-space: nowrap
+			transition: width .5s ease
+			color: #fff
+			font-family: $bebas-neuebold
+			font-size: 16px
+			line-height: 16px
+	&-btn
+		font-family: bebas-neueregular
+		font-size: 16px
+		color: $white
+		background-color: #13151c
+		padding: 10px
+		border: none
+		outline: none
+		width: 100%
+		height: 100px
+		cursor: pointer
+		margin: 20px 0
+		transition: color .5s ease
+		letter-spacing: 1.5px
+		&:hover
+			color: #ffffff
+.contact
+	background: #13151c
+	padding: 50px 60px
+	&-flex
+		display: flex
+		justify-content: space-between
+	&-item
+		width: 25%
+		&-link
+			color: #11bae4
+			font-family: bebas-neueregular
+			text-decoration: none
+			transition: color .5s ease
+			letter-spacing: 1.5px
+			&:hover
+				color: #fff
+		&-right
+			max-width: 360px
+			width: 100%
+		&_flex
+			display: flex
+			justify-content: flex-end
+		&-flex
+			display: flex
+			flex-direction: column
+			align-items: flex-start
+	&-title
+		font-family: bebas-neuebold
+		font-size: 20px
+		margin-bottom: 20px
+		color: #ffffff
+		letter-spacing: 2px
+	&-text
+		font-size: 16px
+		display: inline-block
+		color: #fff
+		text-decoration: none
+		padding: 10px 0 10px 40px
+		transition: all .5s ease
+		&_loc
+			background: url(../img/pin.svg) no-repeat left center
+			background-size: 15px 18px
+		&_phone
+			background: url(../img/phone.svg) no-repeat left center
+			background-size: 18px 18px
+			&:hover
+				color: #11bae4
+		&_mail
+			background: url(../img/mail.svg) no-repeat left center
+			background-size: 20px 15px
+			&:hover
+				color: #11bae4
+				text-decoration: underline
+	&-list
+		&-item
+			padding: 5px 0
+	&-form
+		background: #393635
+		padding: 15px 0 15px 15px
+		display: flex
+		justify-content: space-between
+		margin-top: 30px
+		&-input
+			background: transparent
+			color: #ffffff
+			border: none
+			outline: none
+			padding-left: 35px
+			background: url(../img/mail.svg) no-repeat left center
+			background-size: 20px 15px
+			width: 100%
+			font-size: 16px
+		&-btn
+			background: transparent
+			color: $accent
+			border: none
+			outline: none
+			font-size: 17px
+			font-family: $bebas-neueregular
+			padding: 0 20px
+			cursor: pointer
+			border-left: 1px solid rgba(255, 255, 255, 0.3)
+			transition: color .5s ease
+			flex-shrink: 0
+			&:hover
+				color: #ffffff
+	&-description
+		font-size: 14px
+		color: $white
+		margin-top: 15px
+.footer
+	background: #13151c
+	border-top: 1px solid #2b2d33
+	&-flex
+		display: flex
+		justify-content: space-between
+		align-items: center
+	&-social
+		&-item
+			font-size: 0
+		&_fb
+			height: 20px
+			width: 20px
+		&_vk
+			height: 20px
+			width: 20px
+		&_inst
+			height: 22px
+			width: 22px
+		&-link
+			display: flex
+			height: 95px
+			width: 95px
+			align-items: center
+			justify-content: center
+			transition: all .5s ease
+			&:hover
+				background: #6383a8
+				.footer-social-svg path, .footer-social-svg rect
+					fill: #fff
+		&-list
+			display: flex
+		&-item
+			border-right: 1px solid #2b2d33
+			&:last-child
+				border-right: none
+	&-center
+		display: flex
+		align-items: center
+		&-flex
+			display: flex
+			align-items: center
+			margin-left: 5px
+		&-link
+			font-size: 0
+		&-text
+			color: $white
+			text-align: center
+			font-size: 14px
+		&-img
+			height: 18px
+			margin-top: 2px
+			width: 100px
+	&-right
+		display: flex
+		width: 300px
+		align-items: center
+		justify-content: flex-end
+		padding-right: 60px
+	&-img
+		&_visa
+			width: 50px
+			height: 20px
+		&_paypal
+			width: 18px
+			height: 20px
+			margin-left: 20px
+		&_master
+			width: 28px
+			height: 20px
+			margin-left: 20px
+.footer-social-svg path, .footer-social-svg rect
+	transition: fill .5s ease
+.categories .slick-dots li button:before
+	opacity: 1
+	color: rgba(107, 203, 235, 0.4)
+	border: none
+.categories .slick-dots li.slick-active button:before
+	color: #fff
+	border: none
+.mobile
+	display: none
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	z-index: 5
+	background: #080a0f
+	&-flex
+		display: flex
+		height: 86px
+		border-bottom: 1px solid rgba(6, 189, 214, 0.1)
+	&-left
+		width: 85px
+		border-right: 1px solid rgba(6, 189, 214, 0.1)
+		flex-shrink: 0
+		background: url(../img/menu.svg) no-repeat center
+		background-size: 20px 15px
+		position: relative
+		&-slide
+			position: relative
+			transition: height .5s ease
+		&-overlay
+			background: transparent
+			position: fixed
+			top: 0
+			width: 100%
+			height: 100vh
+			overflow-y: scroll
+			left: -100%
+			transition: left .5s ease
+			&.active
+				left: 0
+		&-menu
+			width: 95%
+			max-width: 460px
+			background: #13151c
+			position: absolute
+			top: 0
+			padding: 40px
+			transition: left .5s ease
+			&.active
+				left: 0
+		&-top
+			display: flex
+			justify-content: space-between
+			align-items: flex-end
+		&-lang
+			margin-left: 15px
+			font-size: 17px
+			&.active
+				color: $accent
+		&-form
+			margin-top: 20px
+		&-input
+			width: 100%
+			height: 50px
+			line-height: 50px
+			border: none
+			outline: none
+			border-radius: 5px
+			color: #ffffff
+			padding-left: 50px
+			background: rgba(255, 255, 255, 0.1) url(../img/search.svg) no-repeat left 20px center
+			background-size: 15px 15px
+		&-title
+			font-size: 54px
+			font-family: $bebas-neuebold
+			color: #ffffff
+		&-block
+			display: flex
+			margin-bottom: 5px
+		&-lang
+			color: #ffffff
+			font-family: $bebas-neueregular
+		&-list
+			position: absolute
+			left: -115%
+			top: 0
+			width: 100%
+			transition: left .5s ease
+			&.active
+				left: 0
+		&-item, &-link
+			color: $accent
+			font-family: $bebas-neueregular
+			padding: 30px 0
+			border-bottom: 1px solid rgba(117, 118, 122, 0.1)
+			text-decoration: none
+			&:last-child
+				border-bottom: none
+		&-item
+			&_first
+				color: $white
+				border-top: 1px solid rgba(117, 118, 122, 0.1)
+				margin-top: 30px
+				padding-left: 25px
+		&-link
+			&_last
+				color: $white
+	&-right
+		width: 85px
+		border-left: 1px solid rgba(6, 189, 214, 0.1)
+		flex-shrink: 0
+		background: url(../img/cart.svg) no-repeat center
+		background-size: 15px 18px
+	&-center
+		width: 100%
+		display: flex
+		align-items: center
+		justify-content: center
+	&-logo
+		margin: 0 auto
+		width: 70px
 @import "media" // Всегда в конце

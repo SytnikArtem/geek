@@ -1,26 +1,217 @@
 @import "vars"
 
 /*==========  Desktop First  ==========*/
-
+@media only screen and (max-width : 1600px)
+  .slider-item
+    height: 570px
 /* Large Devices, Wide Screens */
+@media only screen and (max-width : 1400px)
+  .menu-item-link
+    padding: 0px 20px
+  .menu-hide
+    top: 68px
+  .sale
+    background-position: left bottom -100px
+  .sale-info
+    margin-right: 100px
+  .footer-center
+    width: 400px
+    flex-direction: column
 @media only screen and (max-width : 1200px)
-	/**/
-
-
+  .slider-item
+    height: 400px
+  .slider-info
+    top: 35px
+  .menu-item-link
+    padding: 0 15px
+  .sale-info
+    margin-right: 20px
+  .contact
+    padding: 40px 20px
+  .categories-slider-hover
+    top: 30px
+  .slider-title
+    font-size: 40px
+    line-height: 40px
+  .slider-info
+    top: 70px
+    left: 115px
+  .sale-info-title
+    font-size: 40px
+    line-height: 40px
+    margin-top: 45px
+  .news-item-name
+    font-size: 18px
+    letter-spacing: 2px
+    line-height: normal
+  .categories-slider-add
+    bottom: 100px
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-	/**/
-
-
+  .header
+    display: none
+  .slide-menu
+    display: none
+  .categories-slider-hover
+    top: 15px
+  .categories-slider-name
+    margin-top: 10px
+    font-size: 20px
+  .slider-info
+    left: 40px
+  .sale-info-title
+    margin-top: 20px
+  .news-item
+    width: 48%
+    margin: 0 1% 2% 1%
+  .news-row
+    flex-wrap: wrap
+    padding: 0 10px
+  .news
+    padding: 20px 0
+  .news-btn
+    height: 80px
+    margin: 10px 0
+  .footer-social-link
+    height: 70px
+    width: 70px
+  .footer-right
+    width: 180px
+    padding-right: 20px
+  .contact-flex
+    flex-wrap: wrap
+  .contact-item
+    width: 33%
+  .contact-item
+    width: 49%
+  .contact-item:nth-child(1), .contact-item:nth-child(4)
+    margin-top: 20px
+  .contact-item:nth-child(1)
+    order: 1
+  .contact-item:nth-child(4)
+    order: 2
+  .categories-slider-add
+    bottom: 60px
+  .contact-item_flex
+    justify-content: flex-start
+  .mobile
+    display: block
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-	/**/
-
-
+  .slider-item
+    height: 680px
+  .slider-info
+    width: 100%
+    left: 0
+    padding: 0 10px
+    text-align: center
+  .slider-description
+    margin-top: 15px
+  .slider-more
+    margin: 20px auto
+  .slick-dots
+    left: calc(50% - 55px)
+  .slider-item_first
+    background-position: bottom right -100px
+  .sale-info
+    width: 100%
+    margin: 0
+    padding: 0 10px
+    text-align: center
+  .sale-info-stick
+    display: block
+    margin: 0 auto 10px
+  .sale-info-price
+    margin: 20px auto
+  .sale
+    padding-bottom: 230px
+    background-position: bottom -100px right -100px
+    background-size: auto
+  .sale-info-title
+    margin: 0
+  .categories-item
+    width: 440px
+    max-width: 100%
+    margin: 0 auto 20px
+  .categories-row
+    flex-wrap: wrap
+  .categories .slick-dots
+    top: 80px
+    height: 20px
+  .news-item-img
+    max-height: 170px
+  .contact-text
+    font-size: 14px
+    padding-left: 25px
+  .footer-flex
+    flex-wrap: wrap
+  .footer-center
+    order: 1
+    width: 100%
+    padding: 5px 0
+    border-top: 1px solid #2b2d33
+  .categories-slider-add
+    opacity: 1
+  .categories-slider .slick-next, .categories-slider .slick-prev
+    display: none
+@media only screen and (max-width : 600px)
+  .slider-item_first
+    background-position: bottom right -240px
+  .slider-item_second
+    background-position: bottom right -100px
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	/**/
-
+  .news-item-stick
+    position: absolute
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)
+  .news-item-name
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    letter-spacing: 0
+    margin-top: 10px
+  .contact-item:nth-child(1)
+    order: 0
+    margin-top: 0
+  .contact-item, .contact-item:nth-child(4)
+    width: 100%
+    margin-top: 30px
+  .news-item-price
+    margin-top: 5px
+    flex-direction: column
+  .footer-social
+    order: 2
+  .footer-center-text
+    text-align: left
+  .footer-center
+    padding: 35px 10px 35px 30px
+    order: 0
+  .footer-center-flex
+    flex-wrap: wrap
+  .footer-center-flex
+    margin-left: 0
+  .contact
+    padding: 35px
+  .footer
+    border-top: 0
+  .footer-social
+    width: 100%
+    margin-top: 30px
+  .footer-social-item
+    width: 33.4%
+    border: none
+  .footer-social-link
+    width: 100%
+  .footer-social-svg path, .footer-social-svg rect
+    fill: #fff
+  .footer-social-item:first-child
+    background: #3b5998
+  .footer-social-item:nth-child(2)
+    background: #6383a8
+  .footer-social-item:nth-child(3)
+    background: #e4405f
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
