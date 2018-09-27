@@ -20,6 +20,12 @@
   .menu-item-form
     left: 0
     top: 9px
+  .catalog-item
+    width: calc(33.3% - 20px)
+  .catalog-flex.active .catalog-item
+    width: calc(50% - 20px)
+  .filter
+    padding: 20px
 @media only screen and (max-width : 1200px)
   .slider-item
     height: 400px
@@ -50,6 +56,11 @@
     line-height: normal
   .categories-slider-add
     bottom: 100px
+  .filter-row-text
+    font-size: 12px
+    margin-left: 10px
+  .catalog-item-name
+    font-size: 20px
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
   .header
@@ -102,6 +113,30 @@
     display: block
   .slider
     margin-top: 30px
+  .catalog
+    margin-top: 80px
+  .catalog-top
+    padding: 30px 60px
+  .catalog-filter
+    position: absolute
+    width: 400px
+    max-width: 100%
+    top: 0
+    right: -100%
+    transition: right .5s ease
+  .catalog-btn_mobile
+    display: block
+  .catalog-btn_desctop
+    display: none
+  .filter
+    width: 400px
+    max-width: 100%
+    position: absolute
+    top: 0
+    right: -20px
+    padding: 120px 40px 40px
+  .catalog-filter.active
+    right: 0
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
   .categories .slick-dots
@@ -162,6 +197,25 @@
     opacity: 1
   .categories-slider .slick-next, .categories-slider .slick-prev
     display: none
+  .catalog-title-flex
+    padding: 0 20px
+  .catalog-item
+    width: calc(50% - 20px)
+  .catalog-top
+    padding: 20px
+  .catalog-title
+    font-size: 54px
+  .catalog-btn_mobile
+    position: fixed
+    bottom: 40px
+    z-index: 2
+    left: 50%
+    transform: translateX(-50%)
+  .catalog-btn.active
+    opacity: 0
+  .filter-close
+    display: block
+
 @media only screen and (max-width : 600px)
   .slider-item_first
     background-position: bottom right -240px
@@ -220,35 +274,21 @@
     background: #6383a8
   .footer-social-item:nth-child(3)
     background: #e4405f
-
-/* Custom, iPhone Retina */
-@media only screen and (max-width : 320px)
-	/**/
-
-
-/*==========  Mobile First  ==========*/
-
-/* Custom, iPhone Retina */
-@media only screen and (min-width : 320px)
-	/**/
-
-
-/* Extra Small Devices, Phones */
-@media only screen and (min-width : 480px)
-	/**/
-
-
-/* Small Devices, Tablets */
-@media only screen and (min-width : 768px)
-	/**/
-
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width : 992px)
-	/**/
-
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px)
-	/**/
+  .catalog-top
+    display: none
+  .catalog-item-name
+    font-size: 18px
+  .news-item-price
+    margin-top: 0
+  .catalog-stick
+    position: absolute
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)
+  .catalog-title
+    font-size: 54px
+    text-align: center
+    width: 100%
+  .catalog
+    margin-top: 120px
 

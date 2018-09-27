@@ -74,7 +74,7 @@ body
 	min-width: 320px
 	position: relative
 	line-height: normal
-	font-family: $lato-regular
+	font-family: "Lato", sans-serif
 	overflow-x: hidden
 	background: #0f1117
 
@@ -356,16 +356,6 @@ table
 	&:hover
 		.menu-hide
 			display: block
-@keyframes line
-	from
-		width: 100%
-	to
-		width: 0
-@keyframes line2
-	from
-		width: 100%
-	to
-		width: 0
 .slider
 	position: relative
 	background: #080a0f
@@ -382,12 +372,6 @@ table
 			height: 100%
 			background: red
 			display: block
-			animation: line infinite 6s
-			//animation-delay: 1.5s
-	&.active
-		//&:after
-		//	animation: line infinite 4.5s
-		//	animation-delay: 1.5s
 	&-item
 		position: relative
 		&:after
@@ -606,7 +590,7 @@ table
 			font-size: 14px
 			color: $white
 			margin-top: 20px
-			font-family: $lato-regular
+			font-family: "lato", sa
 			width: 100%
 		&-price
 			color: #06c8f4
@@ -1278,7 +1262,7 @@ table
 		font-family: $bebas-neuebold
 		background: #7e14d6 url(../img/filter.svg) no-repeat left 25px center
 		background-size: 16px 14px
-		transition: background-color .5s ease
+		transition: all .5s ease
 		&:hover
 			background-color: #aa1ed4
 		&.active
@@ -1286,12 +1270,15 @@ table
 			background-size: 12px 12px
 			&:hover
 				background-color: rgba(255, 255, 255, 0.2)
+		&_mobile
+			display: none
 	&-flex
 		display: flex
 		justify-content: flex-start
 		padding: 0 10px
 		flex-wrap: wrap
 		margin-top: 25px
+		width: 100%
 		&.active
 			.catalog-item
 				width: calc(33.3% - 20px)
@@ -1306,7 +1293,7 @@ table
 		font-family: $bebas-neueregular
 		margin-top: 20px
 		transition: all .5s ease
-
+		position: relative
 		&-img
 			max-width: 300px
 			width: 100%
@@ -1329,23 +1316,23 @@ table
 			background: #cb2869
 	&-filter
 		height: auto
-		max-height: 400px
 		margin-top: 45px
-		background: red
 		flex-shrink: 0
 		width: 0
 		transition: width .5s ease
 		position: relative
-		&.active
-			//width: 395px
+
 	&-main
 		display: flex
+		overflow: hidden
+		position: relative
+		justify-content: space-between
+		align-items: flex-start
 .filter
 	background: #13151c
 	margin-right: 20px
 	padding: 40px
 	position: absolute
-
 	&-top
 		display: flex
 		align-items: center
@@ -1372,7 +1359,11 @@ table
 		&_start
 			justify-content: flex-start
 			flex-wrap: wrap
-
+		&_column
+			flex-direction: column
+		&_wrap
+			flex-wrap: wrap
+			justify-content: flex-start
 	&-choice
 		background: #1346bf
 		height: 38px
@@ -1398,4 +1389,346 @@ table
 			right: 20px
 			top: 50%
 			transform: translateY(-50%)
+	&-row
+		display: flex
+		justify-content: space-between
+		align-items: center
+		width: 100%
+		font-size: 16px
+		position: relative
+		margin-bottom: 10px
+		&:last-child
+			margin-bottom: 0
+		&-left
+			display: flex
+			justify-content: flex-start
+			align-items: center
+		&-myinput
+			width: 20px
+			height: 20px
+			background: #27292f
+			position: absolute
+			z-index: 2
+			left: 0
+			top: 1px
+			&:after
+				content: ''
+				position: absolute
+				width: 100%
+				height: 100%
+				left: 0
+				top: 0
+				opacity: 0
+				background: url(../img/check.svg) no-repeat center
+				background-size: 10px 10px
+		&-check
+			width: 15px
+			height: 15px
+			opacity: 0
+			position: relative
+			z-index: 3
+		&-text
+			color: #ffffff
+			margin-left: 20px
+			font-size: 16px
+			&.active
+				color: #1346bf
+		&-number
+			color: #ffffff
+	&-color
+		width: 32px
+		height: 32px
+		border-radius: 50%
+		cursor: pointer
+		overflow: hidden
+		position: relative
+		margin: 0 5px 5px 0
+		&.active
+			border: 2px solid #1346bf
+			background-image: url(../img/check.svg)
+			background-repeat: no-repeat
+			background-position: center
+			background-size: 10px 8px
+		&_black
+			background: #060608
+		&_white
+			background: #ffffff
+			&.active
+				background-image: url(../img/check2.svg)
+		&_green
+			background: #575757
+		&_pink
+			background: #f04056
+		&_blue
+			background: #208dc6
+		&_yellow
+			background: #e3bc22
+		&_red
+			background: #d21e1f
+		&_red-black
+			background: #060608
+		&_yellow-black
+			background: #060608
+		&-line
+			width: 100%
+			height: 100%
+			transform: rotate(45deg)
+			display: block
+			position: absolute
+			top: 11px
+			left: 11px
+			&_red
+				background: #d21e1f
+			&_yellow
+				background: #e3bc22
+	&-close
+		width: 100%
+		color: #ffffff
+		background: #1f2129 url(../img/close.svg) no-repeat right 50px center
+		height: 95px
+		position: absolute
+		left: 0
+		top: 0
+		line-height: 95px
+		padding: 0 40px
+		background-size: 10px 10px
+		font-family: $bebas-neueregular
+		font-size: 22px
+		outline: none
+		border: none
+		text-align: left
+		display: none
+.filter-row-check:checked ~ .filter-row-myinput
+	background: #1346bf
+.filter-row-check:checked ~ .filter-row-myinput:after
+	opacity: 1
+.item
+	&-flex
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+		padding: 0 60px
+	&-info
+		width: 360px
+		flex-shrink: 0
+		&-name
+			color: #ffffff
+			font-size: 68px
+			font-family: $bebas-neuebold
+			line-height: 60px
+		&-text
+			display: flex
+			justify-content: flex-start
+			align-items: center
+			font-size: 14px
+			margin-top: 10px
+		&-key
+			color: #6e6e6e
+		&-value
+			color: #bbbbbb
+			margin-left: 5px
+	&-color
+		margin-top: 40px
+		&-text
+			font-size: 14px
+			font-family: $bebas-neueregular
+			color: $white
+		&-flex
+			display: flex
+			justify-content: flex-start
+			flex-wrap: wrap
+			margin-top: 15px
+	&-cart
+		width: 290px
+		height: 50px
+		position: relative
+		background: #27292f
+		border-radius: 25px
+		display: flex
+		align-items: center
+		margin-top: 35px
+	&-btn
+		background: #11bae4 url(../img/cart-check.svg) no-repeat left 22px center
+		background-size: 15px 18px
+		height: 50px
+		border-radius: 25px
+		width: 50%
+		border: none
+		outline: none
+		color: #ffffff
+		font-family: $bebas-neuebold
+		font-size: 16px
+		padding-left: 20px
+		cursor: pointer
+		transition: background-color .5s ease
+		&:hover
+			background-color: #1197e4
+	&-val
+		color: #ffffff
+		width: 50%
+		display: flex
+		justify-content: space-between
+		padding: 0 15px
+		&-center
+			display: flex
+			align-items: center
+	&-minus, &-plus
+		display: block
+		width: 10px
+		text-align: center
+		cursor: pointer
+		color: $white
+		transition: color .5s ease
+		font-size: 20px
+		user-select: none
+		&:hover
+			color: #ffffff
+	&-number
+		background: none
+		border: none
+		outline: none
+		width: 30px
+		color: #ffffff
+		text-align: right
+		margin-right: 3px
+	&-par
+		width: 360px
+		flex-shrink: 0
+		&-title
+			color: #ffffff
+			font-size: 14px
+			font-family: $bebas-neueregular
+			margin-bottom: 20px
+		&-row
+			display: flex
+			justify-content: space-between
+			align-items: center
+			font-size: 14px
+			padding: 5px 0
+		&-name
+			color: $white
+			width: 50%
+		&-value
+			color: #ffffff
+			width: 50%
+	&-gallery
+		width: 1000px
+		position: relative
+		&-stick
+			color: #ffffff
+			font-size: 16px
+			font-family: $bebas-neueregular
+			display: inline-block
+			position: absolute
+			top: 0
+			left: 50%
+			transform: translateX(-50%)
+			padding: 20px 30px
+			&_green
+				background: #8b9f03
+		&-prev
+			//position: absolute
+			width: 350px
+			bottom: 90px
+			left: 50%
+			transform: translateX(-50%)
+
+		&-item
+			border-radius: 5px
+			font-size: 0
+			cursor: pointer
+			margin: 0 5px
+			overflow: hidden
+			width: 65px
+			height: 65px
+	&-img
+		&-big
+			width: 100%
+			max-width: 600px
+			height: auto
+			margin: 0 auto
+		&-sm
+			width: 100%
+			border-radius: 5px
+	&-and
+		margin-top: -30px
+		border-top: 1px solid rgba(255, 255, 255, 0.1)
+		&-title
+			font-size: 20px
+			text-align: center
+			font-family: $bebas-neueregular
+			color: $white
+			padding: 50px 0
+	&-post
+		padding: 60px 0 60px
+		&-img
+			max-width: 1230px
+			width: 100%
+			margin: 0 auto
+			display: block
+		&-row
+			padding: 60px 0px
+			margin: 0 60px
+			color: #ffffff
+			border-top: 1px solid rgba(255, 255, 255, 0.1)
+			&_top
+				border-top: none
+		&-container
+			display: flex
+			justify-content: flex-start
+			align-items: flex-start
+			max-width: 1250px
+			padding: 0 10px
+			margin: 0 auto
+			&_center
+				justify-content: center
+		&-name
+			width: 370px
+			flex-shrink: 0
+			font-size: 24px
+			font-family: $bebas-neueregular
+		&-text
+			font-size: 16px
+			line-height: 28px
+			max-width: 730px
+			margin-bottom: 30px
+			&:last-child
+				margin-bottom: 0
+		&-item
+			font-weight: bold
+			font-size: 16px
+			padding: 10px 5px 10px 45px
+			position: relative
+			&:before
+				position: absolute
+				content: ''
+				width: 4px
+				height: 4px
+				border-radius: 50%
+				background: #ffffff
+				left: 0
+				top: 50%
+				transform: translateY(-50%)
+.fancybox-thumbs
+	width: auto
+	height: 100px
+	top: initial
+	left: 50%
+	transform: translateX(-50%)
+	background: transparent
+.fancybox-thumbs-x .fancybox-thumbs__list
+	margin: 0 auto
+.fancybox-show-thumbs .fancybox-inner
+	right: 0
+	bottom: 100px
+.item-gallery-block .slick-slide img
+	width: 600px
+	margin: 0 auto
+.slick-slide
+	outline: none
+.fancybox-thumbs__list a:before
+	border: none
+	border-bottom: 3px solid #1343b6
+.fancybox-bg
+	background: #000000
 @import "media" // Всегда в конце
