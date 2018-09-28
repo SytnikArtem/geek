@@ -19,6 +19,38 @@
 </head>
 
 <body>
+    <div class="left-reg">
+        <div class="left-reg-close"></div>
+        <div class="left-reg-item active js-login">
+            <img src="img/logo.png" alt="" class="left-reg-img">
+            <h2 class="left-reg-title">Авторизация</h2>
+            <p class="left-reg-subtitle">Если Вы еще не зарегистрировались, перейдите на страницу <span class="left-reg-go js-go" data-name="js-registr">Регистрации</span></p>
+            <input type="text" class="order-item-input" placeholder="Email" name="mail">
+            <input type="password" class="order-item-input" placeholder="Пароль" name="password">
+            <p class="left-reg-go js-go left-reg-go_top" data-name="js-pass">Забыли пароль?</p>
+            <button class="order-right-btn order-right-btn_reg" type="button">Вход в профиль</button>
+        </div>
+        <div class="left-reg-item js-pass">
+            <img src="img/logo.png" alt="" class="left-reg-img">
+            <h2 class="left-reg-title">Восстановить пароль</h2>
+            <p class="left-reg-subtitle">Введите E-Mail Вашей учетной записи. Нажмите кнопку Вперед, чтобы получить пароль по электронной почте.</p>
+            <input type="text" class="order-item-input" placeholder="Email" name="mail">
+            <button class="order-right-btn order-right-btn_reg" type="button">Продолжить</button>
+        </div>
+        <div class="left-reg-item js-registr">
+            <img src="img/logo.png" alt="" class="left-reg-img">
+            <h2 class="left-reg-title">Регистрация</h2>
+            <p class="left-reg-subtitle">Если Вы уже зарегистрированы, перейдите на страницу <span class="left-reg-go js-go" data-name="js-login">Авторизации.</span></p>
+            <input type="text" class="order-item-input" placeholder="Имя" name="name">
+            <input type="text" class="order-item-input" placeholder="Фамилия" name="subname">
+            <input type="text" class="order-item-input" placeholder="Email" name="mail">
+            <input type="text" class="order-item-input" placeholder="Телефон" name="phone">
+            <input type="text" class="order-item-input" placeholder="Пароль" name="pass">
+            <input type="text" class="order-item-input" placeholder="Повторить пароль" name="doblepass">
+            <button class="order-right-btn order-right-btn_reg" type="button">Продолжить</button>
+        </div>
+    </div>
+    <div class="right-reg"></div>
 	<div class="header">
 		<div class="containerr">
 			<div class="header-flex">
@@ -577,30 +609,11 @@
                         <div class="mobile-right-close mobile-right-close_search search-close"></div>
                     </form>
                 </li>
-                <li class="menu-item"><a href="" class="menu-item-link menu-item-link_end">Вход</a></li>
+                <li class="menu-item"><span class="menu-item-link menu-item-link_end enter-to">Вход</span></li>
                 <li class="menu-item">
-                    <a href="" class="menu-item-link menu-item-link_cart">
-                        <svg class="menu-item-cart" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                             viewBox="0 0 407 509" style="enable-background:new 0 0 407 509;" xml:space="preserve">
-                        <style type="text/css">
-                            .st0{clip-path:url(#SVGID_20_);}
-                        </style>
-                        <g>
-                            <defs>
-                                <path class="fill-hover" id="SVGID_10_" d="M152.3,101.5c0-28,22.8-50.8,50.8-50.8s50.8,22.8,50.8,50.8v25.9H152.3V101.5z M380.6,127.4h-76.1v-25.9
-                                    C304.5,45.5,259,0,203,0S101.5,45.5,101.5,101.5v25.9H25.4c-14,0-25.4,11.4-25.4,25.4v329.9c0,14,11.4,25.4,25.4,25.4h355.3
-                                    c14,0,25.4-11.4,25.4-25.4v-330C406,138.7,394.6,127.4,380.6,127.4z"/>
-                            </defs>
-                            <clipPath id="SVGID_20_">
-                                <use xlink:href="#SVGID_10_"  style="overflow:visible;"/>
-                            </clipPath>
-                            <rect fill="#7E14D6" x="-5" y="-5" class="st0" width="416.1" height="518.1"/>
-                        </g>
-                        </svg>
-                    </a>
+                <span class="menu-item-link menu-item-link_cart mobile-right"></span>
                 </li>
             </ul>
-
         </div>
     </section>
     <div class="mobile">
@@ -725,72 +738,73 @@
                     </div>
                 </div>
             </div>
-            <div class="mobile-right-overlay">
-                <div class="mobile-right-menu">
-                    <div class="mobile-right-top">
-                        <h4 class="mobile-right-title">Корзина</h4>
-                        <div class="mobile-right-flex">
-                            <p class="mobile-right-all">Всего товаров на суму:</p>
-                            <p class="mobile-right-allprice">
-                                <span class="mobile-right-allnumber">4000</span>
-                                <span class="mobile-right-allcurrency">MDL</span>
-                            </p>
-                        </div>
-                        <div class="mobile-right-close mobile-right-close_menu"></div>
-                    </div>
-                    <ul class="mobile-right-list">
-                        <li class="mobile-right-item mobile-right-item_keyboard">
-                            <p class="mobile-right-name">Mionix Naos 3200</p>
-                            <div class="mobile-right-item-flex">
-                                <p class="mobile-right-price">
-                                    <span class="mobile-right-number">4000</span>
-                                    <span class="mobile-right-currency">MDL</span>
-                                </p>
-                                <p class="mobile-right-quant">x <span class="mobile-right-quant-number">1</span></p>
-                            </div>
-                            <div class="mobile-right-close mobile-right-close_item"></div>
-                        </li>
-                        <li class="mobile-right-item mobile-right-item_chair">
-                            <p class="mobile-right-name">Mionix Naos 3200</p>
-                            <div class="mobile-right-item-flex">
-                                <p class="mobile-right-price">
-                                    <span class="mobile-right-number">4000</span>
-                                    <span class="mobile-right-currency">MDL</span>
-                                </p>
-                                <p class="mobile-right-quant">x <span class="mobile-right-quant-number">1</span></p>
-                            </div>
-                            <div class="mobile-right-close mobile-right-close_item"></div>
-                        </li>
-                        <li class="mobile-right-item mobile-right-item_keyboard">
-                            <p class="mobile-right-name">Mionix Naos 3200</p>
-                            <div class="mobile-right-item-flex">
-                                <p class="mobile-right-price">
-                                    <span class="mobile-right-number">4000</span>
-                                    <span class="mobile-right-currency">MDL</span>
-                                </p>
-                                <p class="mobile-right-quant">x <span class="mobile-right-quant-number">1</span></p>
-                            </div>
-                            <div class="mobile-right-close mobile-right-close_item"></div>
-                        </li>
-                        <li class="mobile-right-item mobile-right-item_chair">
-                            <p class="mobile-right-name">Mionix Naos 3200</p>
-                            <div class="mobile-right-item-flex">
-                                <p class="mobile-right-price">
-                                    <span class="mobile-right-number">4000</span>
-                                    <span class="mobile-right-currency">MDL</span>
-                                </p>
-                                <p class="mobile-right-quant">x <span class="mobile-right-quant-number">1</span></p>
-                            </div>
-                            <div class="mobile-right-close mobile-right-close_item"></div>
-                        </li>
-                    </ul>
-                    <button class="mobile-right-btn">Оформить заказ</button>
-                </div>
-            </div>
+
             <div class="mobile-center">
                 <img src="img/logo.png" alt="" class="mobile-logo">
             </div>
             <div class="mobile-right"></div>
+        </div>
+    </div>
+    <div class="mobile-right-overlay">
+        <div class="mobile-right-menu">
+            <div class="mobile-right-top">
+                <h4 class="mobile-right-title">Корзина</h4>
+                <div class="mobile-right-flex">
+                    <p class="mobile-right-all">Всего товаров на суму:</p>
+                    <p class="mobile-right-allprice">
+                        <span class="mobile-right-allnumber">4000</span>
+                        <span class="mobile-right-allcurrency">MDL</span>
+                    </p>
+                </div>
+                <div class="mobile-right-close mobile-right-close_menu"></div>
+            </div>
+            <ul class="mobile-right-list">
+                <li class="mobile-right-item mobile-right-item_keyboard">
+                    <p class="mobile-right-name">Mionix Naos 3200</p>
+                    <div class="mobile-right-item-flex">
+                        <p class="mobile-right-price">
+                            <span class="mobile-right-number">4000</span>
+                            <span class="mobile-right-currency">MDL</span>
+                        </p>
+                        <p class="mobile-right-quant">x <span class="mobile-right-quant-number">1</span></p>
+                    </div>
+                    <div class="mobile-right-close mobile-right-close_item"></div>
+                </li>
+                <li class="mobile-right-item mobile-right-item_chair">
+                    <p class="mobile-right-name">Mionix Naos 3200</p>
+                    <div class="mobile-right-item-flex">
+                        <p class="mobile-right-price">
+                            <span class="mobile-right-number">4000</span>
+                            <span class="mobile-right-currency">MDL</span>
+                        </p>
+                        <p class="mobile-right-quant">x <span class="mobile-right-quant-number">1</span></p>
+                    </div>
+                    <div class="mobile-right-close mobile-right-close_item"></div>
+                </li>
+                <li class="mobile-right-item mobile-right-item_keyboard">
+                    <p class="mobile-right-name">Mionix Naos 3200</p>
+                    <div class="mobile-right-item-flex">
+                        <p class="mobile-right-price">
+                            <span class="mobile-right-number">4000</span>
+                            <span class="mobile-right-currency">MDL</span>
+                        </p>
+                        <p class="mobile-right-quant">x <span class="mobile-right-quant-number">1</span></p>
+                    </div>
+                    <div class="mobile-right-close mobile-right-close_item"></div>
+                </li>
+                <li class="mobile-right-item mobile-right-item_chair">
+                    <p class="mobile-right-name">Mionix Naos 3200</p>
+                    <div class="mobile-right-item-flex">
+                        <p class="mobile-right-price">
+                            <span class="mobile-right-number">4000</span>
+                            <span class="mobile-right-currency">MDL</span>
+                        </p>
+                        <p class="mobile-right-quant">x <span class="mobile-right-quant-number">1</span></p>
+                    </div>
+                    <div class="mobile-right-close mobile-right-close_item"></div>
+                </li>
+            </ul>
+            <a href="order.html" class="mobile-right-btn">Оформить заказ</a>
         </div>
     </div>
     <section class="slider">

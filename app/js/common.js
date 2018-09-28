@@ -34,7 +34,7 @@ $(document).ready(function() {
   $('.item-gallery-block').slick({
     asNavFor: '.item-gallery-prev',
     infinite: false,
-    draggable: false
+    draggable: false,
   });
   $('.item-gallery-prev').slick({
     slidesToShow: 5,
@@ -42,6 +42,14 @@ $(document).ready(function() {
     asNavFor: '.item-gallery-block',
     focusOnSelect: true,
     infinite: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          vertical: true
+        }
+      }
+    ]
   });
   var height = $('.mobile-left-list.active').height();
   $('.mobile-left-slide').css('height', height);
@@ -218,6 +226,46 @@ $(document).ready(function() {
     thumbs : {
       autoStart : true,
       axis      : 'x'
+    },
+    infobar: false,
+    buttons: [
+      "close"
+    ]
+  });
+  $('.order-btn').click(function() {
+    $(this).closest('.order-item').find('.order-item-title').addClass('active');
+    $(this).closest('.order-item').find('.order-slide-block').slideUp();
+    $(this).closest('.order-item').next().find('.order-slide-block').slideDown();
+    if($(this).hasClass('order-btn_last')) {
+      $('.order-right-over').css('display', 'none');
     }
   });
+  $('.order-item-title').click(function() {
+    if($(this).hasClass('active')){
+      $(this).closest('.order-item').find('.order-slide-block').slideToggle();
+    }
+  });
+  $('.order-right-btn_grac').click(function() {
+    $('.loader').fadeIn();
+    setTimeout(function() {
+      $('.order-container').fadeOut();
+      $('.order-grac').fadeIn();
+    }, 1000)
+    setTimeout(function() {
+      $('.loader').fadeOut();
+    }, 2000)
+  });
+  $('.enter-to').click(function(){
+    $('.left-reg').fadeIn();
+    $('.right-reg').fadeIn();
+  });
+  $('.left-reg-close').click(function() {
+    $('.left-reg').fadeOut();
+    $('.right-reg').fadeOut();
+  });
+  $('.js-go').click(function() {
+    let name = "." + $(this).data('name');
+    $(name).addClass('active').siblings().removeClass('active');
+    // console.log(name);
+  })
 });

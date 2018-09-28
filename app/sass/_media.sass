@@ -26,6 +26,20 @@
     width: calc(50% - 20px)
   .filter
     padding: 20px
+  .catalog-top
+    padding: 40px 40px
+  .item-flex
+    padding: 0 40px
+  .item-info
+    width: 300px
+  .item-par
+    width: 300px
+  .item-gallery
+    width: calc(100% - 600px)
+  .order-container
+    padding: 0
+  .order-flex
+    padding: 0 40px 40px 40px
 @media only screen and (max-width : 1200px)
   .slider-item
     height: 400px
@@ -61,6 +75,41 @@
     margin-left: 10px
   .catalog-item-name
     font-size: 20px
+  .catalog-top
+    padding: 20px
+  .item-flex
+    padding: 0 20px
+    flex-wrap: wrap
+    justify-content: center
+  .item-info-name
+    font-size: 54px
+    line-height: normal
+  .item-gallery
+    width: calc(100% - 450px)
+  .item-info
+    width: 400px
+    margin-top: 50px
+  .item-par
+    width: 100%
+    margin-top: -50px
+  .item-par-flex
+    display: flex
+    justify-content: center
+    align-items: flex-start
+  .item-par-group
+    width: 33.3%
+  .item-and
+    margin-top: 50px
+  .order-item-flex
+    flex-wrap: wrap
+  .order-left
+    width: 450px
+  .order-item-left
+    margin-bottom: 35px
+  .order-flex
+    padding: 0 20px 20px
+  .order-grac
+    padding: 30px 20px
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
   .header
@@ -137,6 +186,45 @@
     padding: 120px 40px 40px
   .catalog-filter.active
     right: 0
+  .item-and-title
+    padding: 30px 0
+  .item-gallery
+    width: 100%
+    order: 0
+  .item-info
+    width: 100%
+    order: 1
+    margin-top: -50px
+  .item-par
+    order: 2
+    margin-top: 30px
+  .item-info-name_desctop
+    display: none
+  .item-info-name_mobile
+    display: block
+  .item-flex
+    padding: 20px 40px 0
+  .item-gallery
+    margin-top: 10px
+  .fancybox-thumbs__list a
+    width: 70px
+    height: 70px
+  .item-post
+    padding: 30px 0
+  .item-post-row
+    padding: 20px 0
+  .item-post-name
+    font-size: 20px
+  .item-post-item
+    font-size: 14px
+    padding: 7px 5px 7px 30px
+  .item
+    margin-top: 80px
+  .order
+    margin-top: 80px
+  .order-right
+    margin-left: 20px
+
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
   .categories .slick-dots
@@ -215,7 +303,45 @@
     opacity: 0
   .filter-close
     display: block
-
+  .item-gallery-prev
+    width: 60px
+    top: 50%
+    transform: translateY(-50%)
+    left: 90%
+    position: absolute
+    height: 250px
+  .item-gallery-stick
+    display: none
+  .item-par-flex
+    flex-wrap: wrap
+  .item-par-group
+    width: 100%
+  .item-post-container
+    flex-direction: column
+  .item-post-name
+    font-size: 24px
+    margin-bottom: 20px
+    width: 100%
+  .item-post-container
+    padding: 0 20px
+  .item-post-container_center
+    padding: 0
+  .fancybox-thumbs__list a
+    width: 50px
+    height: 50px
+  .sale-info-price
+    margin: 0
+  .order-flex
+    flex-wrap: wrap
+  .order-left
+    width: 100%
+    padding: 0 20px
+  .order-right
+    width: 100%
+    margin-left: 0
+    padding: 40px 20px
+  .order-flex
+    padding: 0 0 20px
 @media only screen and (max-width : 600px)
   .slider-item_first
     background-position: bottom right -240px
@@ -248,14 +374,14 @@
   .footer-center-text
     text-align: left
   .footer-center
-    padding: 35px 10px 35px 30px
+    padding: 35px 20px 35px 20px
     order: 0
   .footer-center-flex
     flex-wrap: wrap
   .footer-center-flex
     margin-left: 0
   .contact
-    padding: 35px
+    padding: 35px 20px
   .footer
     border-top: 0
   .footer-social
@@ -291,4 +417,9 @@
     width: 100%
   .catalog
     margin-top: 120px
-
+  .item-flex
+    padding: 20px 20px 0px
+  .item-gallery-prev
+    left: 85%
+  .item-cart
+    max-width: 100%
