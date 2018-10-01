@@ -354,7 +354,7 @@ $(document).ready(function() {
     $('.right-reg').fadeIn();
     checkActive();
   });
-  $('.left-reg-close').click(function() {
+  $('.left-reg-close, .left-reg-congrat').click(function() {
     $('.left-reg').removeClass('active').fadeOut();
     $('.right-reg').fadeOut();
     checkActive();
@@ -363,6 +363,9 @@ $(document).ready(function() {
   $('.js-go').click(function() {
     let name = "." + $(this).data('name');
     $(name).addClass('active').siblings().removeClass('active');
+    if($('.js-congrat').hasClass('active')) {
+      $('.left-reg-subtitle_down').addClass('active');
+    }
   });
   // Ползунок
   $(".range-line").slider({
@@ -413,5 +416,18 @@ $(document).ready(function() {
       swipeLeft:function(event, direction) {
         $(this).removeClass('active');
       }
+  });
+  $('.contacts-btn').click(function() {
+      $('.feedback-overlay').fadeIn();
+  });
+  $('.feedback-close').click(function() {
+    $('.feedback-overlay').fadeOut();
+  });
+  $('.feedback-overlay').click(function(e){
+    let elem = $(".feedback-popup");
+    if(e.target!=elem[0]&&!elem.has(e.target).length)
+    {
+      $('.feedback-overlay').fadeOut();
+    }
   });
 });

@@ -45,10 +45,26 @@
             <input type="text" class="order-item-input" placeholder="Фамилия" name="subname">
             <input type="text" class="order-item-input" placeholder="Email" name="mail">
             <input type="text" class="order-item-input" placeholder="Телефон" name="phone">
+            <div class="left-reg-line"></div>
             <input type="text" class="order-item-input" placeholder="Пароль" name="pass">
             <input type="text" class="order-item-input" placeholder="Повторить пароль" name="doblepass">
-            <button class="order-right-btn order-right-btn_reg" type="button">Продолжить</button>
+            <label class="filter-row filter-row_reg">
+                <div class="filter-row-left">
+                    <input type="checkbox" class="filter-row-check">
+                    <span class="filter-row-myinput"></span>
+                    <p class="filter-row-text filter-row-text_sm">получать рассылку на почту</p>
+                </div>
+            </label>
+            <button class="order-right-btn order-right-btn_reg js-go" type="button" data-name="js-congrat">Зарегистрироваться</button>
         </div>
+        <div class="left-reg-item js-congrat">
+            <img src="img/logo.png" alt="" class="left-reg-img">
+            <h2 class="left-reg-title">Ваша учетная запись создана!</h2>
+            <p class="left-reg-subtitle">Теперь Вы можете воспользоваться дополнительными возможностями: просмотр истории заказов, печать счета, изменение своей контактной информации и адресов доставки и многое другое.</p>
+            <button class="order-right-btn order-right-btn_reg left-reg-congrat" type="button">Продолжить</button>
+
+        </div>
+        <p class="left-reg-subtitle left-reg-subtitle_down">Если у Вас есть какие-либо вопросы, <a href="mailto:info@geek.md" class="left-reg-link">напишите нам.</a></p>
     </div>
     <div class="right-reg"></div>
 	<div class="header">
@@ -609,7 +625,7 @@
                         <div class="mobile-right-close mobile-right-close_search search-close"></div>
                     </form>
                 </li>
-                <li class="menu-item"><span class="menu-item-link js-go menu-item-link_end enter-to" data-name="js-login">Вход</span></li>
+                <li class="menu-item"><span class="menu-item-link js-go enter-to" data-name="js-login">Вход</span></li>
                 <li class="menu-item">
                 <span class="menu-item-link menu-item-link_cart mobile-right"></span>
                 </li>
@@ -1096,7 +1112,7 @@
                         <p class="contact-text contact-text_loc">Кишинев, ул. Титулеску 6</p>
                         <a href="tel:069-23-73-73" class="contact-text contact-text_phone">069-23-73-73</a>
                         <a href="tel:060-96-96-56" class="contact-text contact-text_phone">060-96-96-56</a>
-                        <a href="mailto:060-96-96-56" class="contact-text contact-text_mail">info@geek.md</a>
+                        <a href="mailto:info@geek.md" class="contact-text contact-text_mail">info@geek.md</a>
                     </div>
                 </div>
                 <div class="contact-item">

@@ -155,6 +155,30 @@ table
 		//justify-content: space-between
 .menu
 	position: relative
+	&-edit
+		position: absolute
+		top: 108px
+		right: 0
+		background: #1c1e25
+		padding: 0 40px 40px
+		width: 240px
+		display: none
+		&-item
+			text-align: right
+			&_exit
+				border-top: 1px solid rgba(255, 255, 255, 0.1)
+				margin-top: 10px
+				padding-top: 10px
+		&-link
+			color: $white
+			font-family: $bebas-neueregular
+			text-decoration: none
+			transition: all .5s ease
+			padding: 10px 0
+			display: inline-block
+			&:hover
+				color: #ffffff
+				text-decoration: underline
 	&-item
 		border: 1px solid rgba(6, 189, 214, 0.1)
 		border-right: none
@@ -162,6 +186,8 @@ table
 		justify-content: center
 		align-items: center
 		flex-shrink: 0
+		&_edit
+			position: relative
 		&_search
 			flex-grow: 1
 			display: flex
@@ -233,6 +259,9 @@ table
 			letter-spacing: 1.5px
 			display: flex
 			align-items: center
+			&_end
+				width: 240px
+				justify-content: flex-end
 			&_white
 				color: #ffffff
 			&_search
@@ -336,10 +365,11 @@ table
 			&:hover
 				color: #ffffff
 				text-decoration: underline
-
+.menu-item_edit:hover .menu-edit
+	display: block
 .menu-item-all_mobile .menu-item-item
 	padding-left: 100px
-.menu-item:not(.menu-item_search):hover .menu-item-link:not(.menu-item-link_end)
+.menu-item:not(.menu-item_search):hover .menu-item-link
 	background-color: #212327
 	color: #ffffff
 .fill-hover
@@ -448,7 +478,7 @@ table
 		&_first
 			background: #7e14d6
 		&_second
-			background: #1197e4
+			background: #1562fb
 		&_third
 			background: #06a8dd
 	&-slider
@@ -1405,6 +1435,8 @@ table
 		font-size: 16px
 		position: relative
 		margin-bottom: 10px
+		&_reg
+			margin: 30px 0 10px
 		&:last-child
 			margin-bottom: 0
 		&-left
@@ -1441,6 +1473,11 @@ table
 			font-size: 16px
 			&.active
 				color: #1346bf
+			&_sm
+				color: $white
+				font-size: 14px
+				&.active
+					color: #ffffff
 		&-number
 			color: #ffffff
 	&-color
@@ -2090,6 +2127,17 @@ table
 		color: $white
 		line-height: 20px
 		margin: 10px 0 40px
+		&_down
+			opacity: 0
+			position: absolute
+			bottom: 60px
+			left: 50%
+			transform: translateX(-50%)
+			margin: 0
+			width: 350px
+			transition: opacity .5s ease
+			&.active
+				opacity: 1
 	&-go
 		color: #11bae4
 		font-weight: bold
@@ -2098,6 +2146,13 @@ table
 		font-size: 14px
 		&_top
 			margin-top: 10px
+	&-line
+		height: 1px
+		width: 100%
+		margin: 10px 0 20px
+		background: rgba(255, 255, 255, 0.1)
+	&-link
+		color: #ffffff
 .right-reg
 	width: calc(100% - 550px)
 	height: 100vh
@@ -2213,5 +2268,417 @@ table
 		flex-shrink: 0
 		font-size: 12px
 		margin: 3px 0 0 2px
-
+.edit
+	&-flex
+		display: flex
+		padding: 0 60px 40px
+		justify-content: space-between
+		align-items: flex-start
+	&-left
+		width: 370px
+		flex-shrink: 0
+	&-btn
+		height: 50px
+		line-height: 50px
+		border-radius: 25px
+		outline: none
+		border: none
+		background: rgba(255, 255, 255, 0.10)
+		font-family: $bebas-neuebold
+		font-size: 16px
+		padding: 0 20px
+		color: $accent
+		transition: background-color .5s ease
+		letter-spacing: 1px
+		margin-top: 20px
+		cursor: pointer
+		&:hover
+			background-color: rgba(255, 255, 255, 0.2)
+	&-center
+		width: 580px
+		padding: 0 10px
+		&-container
+			max-width: 350px
+			width: 100%
+		&-title
+			font-size: 36px
+			color: #ffffff
+			font-family: $bebas-neuebold
+			letter-spacing: 3px
+			margin-bottom: 30px
+		&-main
+			border-top: 1px solid rgba(255, 255, 255, 0.1)
+			padding: 35px 0
+		&-row
+			display: flex
+			justify-content: flex-start
+			align-items: flex-start
+			margin-bottom: 15px
+			font-size: 16px
+			&:last-child
+				margin-bottom: 0
+		&-name
+			width: 250px
+			color: $white
+			flex-shrink: 0
+		&-value
+			color: #ffffff
+		&-link
+			color: $accent
+			text-decoration: underline
+			font-size: 16px
+			margin-bottom: 20px
+			cursor: pointer
+			transition: color .5s ease
+			&:hover
+				color: #ffffff
+	&-right
+		width: 480px
+		&_empty
+			width: 370px
+		&-cart
+			background: linear-gradient(to top right, #740ecb, #4923ed, #0587f5)
+			padding: 40px
+			border-radius: 5px
+		&-row
+			display: flex
+			justify-content: space-between
+			align-items: flex-start
+			&:first-child
+				margin-bottom: 80px
+			&_center
+				align-items: center
+		&-title
+			font-size: 22px
+			color: #ffffff
+			font-family: $bebas-neuebold
+			letter-spacing: 2px
+		&-text
+			font-size: 13px
+			line-height: 20px
+			color: $white
+			max-width: 220px
+			margin-top: 15px
+		&-name
+			color: rgba(255, 255, 255, 0.4)
+			font-family: $bebas-neueregular
+			font-size: 16px
+			letter-spacing: 1px
+		&-bonus
+			color: #ffffff
+			font-family: $bebas-neueregular
+			display: flex
+			align-items: flex-start
+			justify-content: flex-start
+		&-number
+			font-size: 35px
+		&-value
+			font-size: 18px
+			margin: 2px 0 0 1px
+	&-list
+		&-item
+			padding: 10px 0
+		&-link
+			font-family: $bebas-neueregular
+			color: #ffffff
+			text-decoration: none
+			transition: color .5s ease
+			letter-spacing: 1px
+			&:hover
+				color: $accent
+			&.active
+				color: $accent
+	&-links
+		display: flex
+		align-items: flex-start
+		flex-direction: column
+		border-top: 1px solid rgba(255, 255, 255, 0.1)
+		padding-top: 35px
+.delivery
+	&-main
+		width: 740px
+		&_fluid
+			width: 100%
+	&-right
+		width: 370px
+	&-img
+		width: 210px
+		height: 75px
+	&-content
+		padding: 60px 0 0
+		border-top: 1px solid rgba(255, 255, 255, 0.1)
+	&-description
+		font-size: 16px
+		color: $white
+		line-height: 20px
+		margin-top: 15px
+	&-subtitle
+		margin-top: 40px
+		color: #ffffff
+		font-family: $bebas-neueregular
+		font-size: 24px
+		letter-spacing: 2px
+	&-list
+		padding: 40px 0
+		&-item
+			padding: 10px 0 10px 65px
+			margin-bottom: 10px
+			&:last-child
+				margin-bottom: 0
+			&_first
+				background: url(../img/mouse.svg) no-repeat left center
+				background-size: 30px 45px
+			&_second
+				background: url(../img/speaker.svg) no-repeat left center
+				background-size: 30px 45px
+			&_third
+				background: url(../img/chair.svg) no-repeat left center
+				background-size: 35px 45px
+			&_fourth
+				background: url(../img/cofee.svg) no-repeat left center
+				background-size: 30px 45px
+			&_fifth
+				background: url(../img/game.svg) no-repeat left center
+				background-size: 40px 40px
+			&_sixth
+				background: url(../img/news.svg) no-repeat left center
+				background-size: 40px 35px
+		&-title
+			font-weight: bold
+			color: #ffffff
+		&-active
+			color: #11a9cf
+		&-description
+			color: $white
+			font-size: 14px
+			margin-top: 5px
+	&-block
+		padding: 30px 30px 30px 25px
+		background: #1b1d23
+		border-left: 2px solid #ffffff
+		color: #ffffff
+		max-width: 730px
+		width: 100%
+		font-size: 14px
+		line-height: 28px
+		&-link
+			color: inherit
+		&_red
+			border-color: #ff6c00
+			color: #ff6c00
+		&_green
+			color: #06cbf4
+			border-color: #06cbf4
+.payment
+	&-content
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+		border-top: 1px solid rgba(255, 255, 255, 0.1)
+		padding-top: 50px
+	&-item
+		width: 25%
+		padding: 80px 30px 0 0
+		&:first-child
+			background: url(../img/cash.svg) no-repeat left top
+			background-size: 50px 50px
+		&:nth-child(2)
+			background: url(../img/check-pay.svg) no-repeat left top
+			background-size: 50px 50px
+		&:nth-child(3)
+			background: url(../img/cards.svg) no-repeat left top
+			background-size: 50px 50px
+		&:nth-child(4)
+			background: url(../img/credit.svg) no-repeat left top
+			background-size: 50px 50px
+		&_about
+			&:first-child
+				background: url(../img/paly.svg) no-repeat left top
+				background-size: 50px 35px
+			&:nth-child(2)
+				background: url(../img/new.svg) no-repeat left top
+				background-size: 50px 50px
+			&:nth-child(3)
+				background: url(../img/people.svg) no-repeat left top
+				background-size: 45px 50px
+		&-title
+			font-size: 24px
+			color: #ffffff
+			font-family: $bebas-neueregular
+			letter-spacing: 2px
+		&-text
+			margin-top: 20px
+			color: $white
+			font-size: 14px
+			line-height: 20px
+.guaranty
+	&-content
+		color: #ffffff
+		border-top: 1px solid rgba(255, 255, 255, 0.1)
+	&-block
+		background: #1b1d23
+		padding: 30px
+		border-left: 2px solid #ff6c00
+		margin: 60px 0 30px
+		&-text
+			color: #ff6c00
+			text-transform: uppercase
+			font-size: 14px
+			line-height: 28px
+	&-text
+		font-size: 16px
+		line-height: 28px
+	&-list
+		margin: 40px 0 0
+		padding-left: 20px
+	&-item
+		padding-left: 30px
+		list-style: disc
+		margin-bottom: 30px
+		font-size: 16px
+		line-height: 24px
+		&:last-child
+			margin-bottom: 0
+	&-subtitle
+		font-size: 24px
+		font-family: $bebas-neueregular
+		letter-spacing: 4px
+		margin: 60px 0 30px
+.contacts
+	&-main
+		display: flex
+		justify-content: flex-start
+		align-items: flex-start
+		padding-top: 50px
+		border-top: 1px solid rgba(255, 255, 255, 0.1)
+	&-item
+		color: #ffffff
+		max-width: 380px
+		width: 100%
+		padding-right: 10px
+	&-title
+		font-size: 20px
+		font-family: $bebas-neuebold
+		padding-left: 30px
+		margin-bottom: 25px
+		letter-spacing: 1px
+		&_first
+			background: url(../img/pin2.svg) no-repeat left center
+			background-size: 16px 18px
+		&_second
+			background: url(../img/phone2.svg) no-repeat left center
+			background-size: 18px 18px
+	&-text
+		font-size: 16px
+		&_phone
+			display: inline-block
+			margin-right: 20px
+	&-description
+		color: $white
+		font-size: 16px
+		margin-top: 10px
+	&-btn
+		background: #7e14d6 url(../img/mail2.svg) no-repeat left 25px center
+		background-size: 20px 15px
+		height: 50px
+		line-height: 50px
+		color: #ffffff
+		font-size: 16px
+		font-family: $bebas-neueregular
+		border-radius: 25px
+		border: none
+		outline: none
+		padding: 0 30px 0 60px
+		cursor: pointer
+		transition: background-color .5s ease
+		&:hover
+			background-color: #aa1ed4
+.contacts-map
+	height: 600px
+.map
+	width: 100%
+	height: 100%
+.gm-fullscreen-control, .gmnoprint
+	display: none
+.feedback
+	&-overlay
+		position: fixed
+		left: 0
+		top: 0
+		right: 0
+		bottom: 0
+		z-index: 10
+		background: rgba(0, 0, 0, 0.7)
+		overflow-y: auto
+		display: none
+	&-flex
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 100%
+		height: 100%
+	&-popup
+		background: #1c1e25
+		padding: 60px
+		position: relative
+	&-title
+		font-size: 36px
+		font-family: $bebas-neuebold
+		color: #ffffff
+		letter-spacing: 4px
+		margin-bottom: 30px
+		padding-bottom: 30px
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+	&-row
+		display: flex
+		align-items: center
+		justify-content: space-between
+	&-input
+		width: 300px
+		background: rgba(255, 255, 255, 0.05)
+		height: 50px
+		font-size: 16px
+		padding-left: 20px
+		border: none
+		outline: none
+		border-radius: 3px
+		color: #ffffff
+		&:first-child
+			margin-right: 40px
+	&-textarea
+		width: 100%
+		height: 130px
+		background: rgba(255, 255, 255, 0.05)
+		border-radius: 3px
+		color: #ffffff
+		font-size: 16px
+		padding: 20px
+		outline: none
+		border: none
+		margin: 40px 0
+		resize: none
+	&-btn
+		height: 50px
+		line-height: 50px
+		border-radius: 25px
+		font-size: 16px
+		font-family: $bebas-neuebold
+		padding: 0 25px
+		color: #ffffff
+		border: none
+		outline: none
+		background: #7e14d6
+		cursor: pointer
+		transition: all .5s ease
+		&:hover
+			background: #aa1ed4
+	&-close
+		width: 10px
+		height: 10px
+		position: absolute
+		right: 40px
+		top: 40px
+		background: url(../img/close.svg) no-repeat center
+		background-size: 10px 10px
+		cursor: pointer
 @import "media" // Всегда в конце
