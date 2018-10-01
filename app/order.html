@@ -18,6 +18,38 @@
 </head>
 
 <body>
+  <div class="left-reg">
+      <div class="left-reg-close"></div>
+      <div class="left-reg-item active js-login">
+          <img src="img/logo.png" alt="" class="left-reg-img">
+          <h2 class="left-reg-title">Авторизация</h2>
+          <p class="left-reg-subtitle">Если Вы еще не зарегистрировались, перейдите на страницу <span class="left-reg-go js-go" data-name="js-registr">Регистрации</span></p>
+          <input type="text" class="order-item-input" placeholder="Email" name="mail">
+          <input type="password" class="order-item-input" placeholder="Пароль" name="password">
+          <p class="left-reg-go js-go left-reg-go_top" data-name="js-pass">Забыли пароль?</p>
+          <button class="order-right-btn order-right-btn_reg" type="button">Вход в профиль</button>
+      </div>
+      <div class="left-reg-item js-pass">
+          <img src="img/logo.png" alt="" class="left-reg-img">
+          <h2 class="left-reg-title">Восстановить пароль</h2>
+          <p class="left-reg-subtitle">Введите E-Mail Вашей учетной записи. Нажмите кнопку Вперед, чтобы получить пароль по электронной почте.</p>
+          <input type="text" class="order-item-input" placeholder="Email" name="mail">
+          <button class="order-right-btn order-right-btn_reg" type="button">Продолжить</button>
+      </div>
+      <div class="left-reg-item js-registr">
+          <img src="img/logo.png" alt="" class="left-reg-img">
+          <h2 class="left-reg-title">Регистрация</h2>
+          <p class="left-reg-subtitle">Если Вы уже зарегистрированы, перейдите на страницу <span class="left-reg-go js-go" data-name="js-login">Авторизации.</span></p>
+          <input type="text" class="order-item-input" placeholder="Имя" name="name">
+          <input type="text" class="order-item-input" placeholder="Фамилия" name="subname">
+          <input type="text" class="order-item-input" placeholder="Email" name="mail">
+          <input type="text" class="order-item-input" placeholder="Телефон" name="phone">
+          <input type="text" class="order-item-input" placeholder="Пароль" name="pass">
+          <input type="text" class="order-item-input" placeholder="Повторить пароль" name="doblepass">
+          <button class="order-right-btn order-right-btn_reg" type="button">Продолжить</button>
+      </div>
+  </div>
+  <div class="right-reg"></div>
 <div class="header">
     <div class="containerr">
         <div class="header-flex">
@@ -773,7 +805,7 @@
                                     <p class="order-item-description">Я совершал здесь покупки ранее и регистрировался</p>
                                     <input type="text" class="order-item-input" placeholder="Email" name="mail">
                                     <input type="password" class="order-item-input" placeholder="Пароль" name="password">
-                                    <a href="" class="order-item-link">Забыли пароль?</a>
+                                    <p class="order-item-link enter-to js-go" data-name="js-pass">Забыли пароль?</p>
                                 </div>
                             </div>
                             <button type="button" class="order-btn">Продолжить</button>

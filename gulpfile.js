@@ -46,7 +46,9 @@ gulp.task('libs-js', function(){
   return gulp.src([
     'app/libs/slick/slick/slick.min.js',
     'app/libs/wow.js/dist/wow.js',
-    'app/libs/fancybox/dist/jquery.fancybox.js'
+    'app/libs/fancybox/dist/jquery.fancybox.js',
+    'app/libs/jquery-ui.js',
+    'app/libs/jquery.touchSwipe.min.js'
   ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
