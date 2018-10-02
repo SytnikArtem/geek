@@ -1,6 +1,11 @@
 @import "vars"
 
 /*==========  Desktop First  ==========*/
+@media only screen and (max-width : 1800px)
+  .menu-hide
+    width: 600px
+  .menu-right-list
+    width: 388px
 @media only screen and (max-width : 1600px)
   .slider-item
     height: 570px
@@ -8,6 +13,13 @@
     padding: 10px 5px
   .filter-count-item_first
     padding-right: 20px
+  .menu-hide
+    width: 450px
+  .menu-right-list
+    width: 238px
+  .menu-right-list
+    background-size: cover
+    background-position: center
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1400px)
   .menu-item-link
@@ -56,6 +68,9 @@
     width: 170px
   .edit-right_empty
     width: 250px
+  .left-reg-item
+    top: 40px
+    transform: translate(-50%, 0)
 @media only screen and (max-width : 1200px)
   .slider-item
     height: 400px
@@ -146,6 +161,16 @@
     width: 100%
   .edit-center-name
     width: 150px
+  .story-main-right
+    margin-left: 15px
+  .story-main-right
+    width: 250px
+  .story-top-right
+    width: 350px
+  .menu-hide
+    width: 412px
+  .menu-right-list
+    width: 200px
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
   .header
@@ -298,6 +323,22 @@
     margin: 20px auto 0
   .edit-right_empty
     display: none
+  .story-top
+    flex-direction: column
+    align-items: flex-start
+  .story-top-left
+    width: 100%
+    justify-content: space-between
+  .story-top-right
+    width: 100%
+    padding-left: 25px
+    margin-top: 10px
+  .story-main-flex
+    flex-direction: column
+  .story-main-right
+    width: 100%
+    margin-left: 0
+    margin-top: 20px
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
   .categories .slick-dots
@@ -421,6 +462,9 @@
     display: none
   .slider-title
     font-size:  54px
+    line-height: 54px
+  .slider-description
+    font-size: 16px
   .edit-flex
     padding: 0 20px 20px
   .delivery-img
@@ -447,6 +491,10 @@
   .edit-center
     width: 100%
     padding: 0
+  .left-reg
+    width: 100%
+  .right-reg
+    z-index: -1
 @media only screen and (max-width : 600px)
   .slider-item_first
     background-position: bottom right -240px
@@ -467,6 +515,8 @@
     margin: 0 0 20px
   .feedback-textarea
     margin: 20px 0
+  .slider .slick-slider
+    padding-top: 100px
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
   .news-item-stick
@@ -565,3 +615,14 @@
     margin-top: 10px
   .edit-right-cart
     padding: 20px
+  .story-item
+    padding: 10px
+  .story-top-right
+    flex-direction: column
+    align-items: flex-start
+  .story-top-btn
+    margin-top: 10px
+  .story-main-all
+    width: 65px
+  .left-reg-item
+    padding: 20px 10px

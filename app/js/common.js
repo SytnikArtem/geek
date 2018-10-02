@@ -127,11 +127,16 @@ $(document).ready(function() {
   $('.mobile-left-item_enter').click(function(){
     let number = $(this).data("number");
     console.log(number);
-    $('.mobile-left-list').eq(0).removeClass('active');
+    // $('.mobile-left-list').eq(0).removeClass('active');
+    $(this).closest('.mobile-left-list').removeClass('active');
     $('.mobile-left-list').eq(number).addClass('active');
     height = $('.mobile-left-list.active').height();
     $('.mobile-left-slide').css('height', height);
   });
+  // $('.mobile-left-item_js').click(function() {
+  //   $(this).closest('.mobile-left-list').removeClass('active');
+  //   $(this).find('.mobile-left-list').addClass('active');
+  // });
   $('.mobile-left-item_first').click(function(){
     $(this).closest('.mobile-left-list').removeClass('active')
     $('.mobile-left-list').eq(0).addClass('active');
@@ -407,6 +412,7 @@ $(document).ready(function() {
   	}
   	$(".range-line").slider("values",1,value2);
   });
+  // swipe для меню и корзины
   $('.mobile-right-overlay').swipe({
       swipeRight:function(event, direction) {
         $(this).removeClass('active');
@@ -417,6 +423,7 @@ $(document).ready(function() {
         $(this).removeClass('active');
       }
   });
+  // попап для фидбека
   $('.contacts-btn').click(function() {
       $('.feedback-overlay').fadeIn();
   });
@@ -430,4 +437,8 @@ $(document).ready(function() {
       $('.feedback-overlay').fadeOut();
     }
   });
+  // История заказов, открытие и зактытие подробной инфо
+  $('.story-top').click(function() {
+    $(this).closest('.story-item').find('.story-main').slideToggle();
+  })
 });

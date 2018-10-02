@@ -163,6 +163,7 @@ table
 		padding: 0 40px 40px
 		width: 240px
 		display: none
+		z-index: 2
 		&-item
 			text-align: right
 			&_exit
@@ -306,7 +307,7 @@ table
 		display: none
 		top: 108px
 		left: 0px
-		width: 763px
+		width: 862px
 		background: #1c1e25
 		font-family: $bebas-neueregular
 		z-index: 2
@@ -351,12 +352,20 @@ table
 				opacity: 1
 		&-list
 			position: absolute
-			left: 210px
+			left: 212px
 			top: 0
-			padding: 10px 40px
+			padding: 8px 40px
 			display: none
-			z-index: 1
-			width: 675px
+			z-index: 2
+			width: 650px
+			background: #282930
+			&_mouse
+				background: #282930 url(../img/mouse.jpg) no-repeat right bottom -50px
+			&_keyboard
+				background: #282930 url(../img/keyboard.png) no-repeat right bottom
+			&_head
+				background: #282930 url(../img/head.png) no-repeat right 100px bottom
+				background-size: 200px
 		&-link
 			color: $white
 			text-decoration: none
@@ -1068,33 +1077,16 @@ table
 			top: 40px
 			padding: 10px
 			cursor: pointer
-			&:after
-				content: ''
-				width: 10px
-				height: 2px
-				background: #ffffff
-				display: block
-				transform: rotate(45deg)
-				position: absolute
-				left: 6px
-				top: 9px
-			&:before
-				content: ''
-				width: 10px
-				height: 2px
-				background: #ffffff
-				display: block
-				transform: rotate(-45deg)
-				position: absolute
-				top: 9px
-				left: 6px
+			background: url(../img/close.svg) no-repeat center
+			background-size: 10px 10px
 			&_item
 				top: 20px
 				right: 20px
-				&:after, &:before
-					background: rgba(255, 255, 255, 0.3)
+				background: url(../img/close2.svg) no-repeat center
+				background-size: 10px 10px
 			&_search
-				background: #909193
+				background: #909193 url(../img/close4.svg) no-repeat center
+				background-size: 5px 5px
 				border-radius: 50%
 				top: 18px
 				right: 20px
@@ -2088,6 +2080,7 @@ table
 	top: 0
 	transition: left .5s ease
 	display: none
+	overflow: auto
 	&-close
 		width: 14px
 		height: 14px
@@ -2098,6 +2091,7 @@ table
 		cursor: pointer
 		background: url(../img/close.svg) no-repeat center
 		background-size: 14px 14px
+		z-index: 2
 	&-list
 		width: 100%
 		height: 100%
@@ -2112,6 +2106,7 @@ table
 		width: 100%
 		max-width: 350px
 		transition: all .5s ease
+		padding: 20px 0
 		&.active
 			left: 50%
 	&-img
@@ -2681,4 +2676,145 @@ table
 		background: url(../img/close.svg) no-repeat center
 		background-size: 10px 10px
 		cursor: pointer
+.story
+	&-content
+		width: 100%
+		display: flex
+		flex-direction: column
+	&-item
+		padding: 10px 20px
+		background: rgba(255, 255, 255, 0.05)
+		border-radius: 3px
+		margin-bottom: 10px
+	&-top
+		color: #ffffff
+		display: flex
+		justify-content: space-between
+		align-items: center
+		font-size: 14px
+		position: relative
+		cursor: pointer
+		&-left
+			display: flex
+			align-items: center
+			justify-content: flex-start
+			padding-left: 25px
+		&-right
+			display: flex
+			justify-content: space-between
+			align-items: center
+			width: 390px
+		&-number
+			color: $white
+			margin-right: 60px
+		&-date
+			font-weight: bold
+		&-price
+			font-weight: bold
+		&-active
+			color: $accent
+		&-btn
+			height: 30px
+			line-height: 30px
+			font-size: 12px
+			text-transform: uppercase
+			padding: 0 10px
+			border-radius: 3px
+			background: #30333c
+			font-weight: bold
+			&_green
+				background: #8b9f03
+			&_blue
+				background: #0e7dd2
+		&-down
+			position: absolute
+			left: 0
+			top: 12px
+			width: 0
+			height: 0
+			border: 5px solid transparent
+			border-top: 5px solid #3b3f4d
+	&-main
+		border-top: 1px solid rgba(255, 255, 255, 0.10)
+		margin-top: 10px
+		padding-top: 20px
+		display: none
+		&-flex
+			display: flex
+			align-items: flex-start
+			justify-content: space-between
+		&-left
+			width: 100%
+		&-right
+			width: 295px
+			margin-left: 30px
+			flex-shrink: 0
+		&-item
+			background: #23252d url(../img/square2.png) no-repeat left 20px center
+			border-radius: 3px
+			padding: 30px 25px 25px 115px
+			margin-bottom: 10px
+			background-size: 75px
+		&-name
+			color: #ffffff
+			font-family: $bebas-neuebold
+			font-size: 18px
+			letter-spacing: 1px
+			margin-bottom: 10px
+		&-bottom
+			display: flex
+			align-items: center
+			justify-content: space-between
+			color: $white
+			font-family: $bebas-neueregular
+		&-price
+			display: flex
+			align-items: flex-start
+			&_active
+				font-family: $bebas-neuebold
+				color: $accent
+		&-value
+			font-size: 16px
+			letter-spacing: 2px
+			&_big
+				font-size: 35px
+				font-family: $bebas-neueregular
+		&-currency
+			font-size: 10px
+			margin: 1px 0 0 2px
+			&_big
+				font-family: $bebas-neueregular
+				font-size: 18px
+				margin-top: 3px
+		&-all
+			display: flex
+			align-items: center
+			justify-content: space-between
+			width: 140px
+		&-number
+			font-size: 16px
+		&-small
+			font-size: 12px
+		&-row
+			display: flex
+			justify-content: space-between
+			align-items: flex-start
+			margin-bottom: 15px
+			&_center
+				align-items: center
+			&_big
+				border-top: 1px solid rgba(255, 255, 255, 0.1)
+				padding-top: 30px
+				align-items: center
+		&-title
+			font-size: 16px
+			color: rgba(255, 255, 255, 0.4)
+			font-family: $bebas-neueregular
+			letter-spacing: 2px
+		&-text
+			color: #ffffff
+			text-align: right
+			max-width: 120px
+			font-size: 14px
+			line-height: 14px
 @import "media" // Всегда в конце
