@@ -1171,16 +1171,20 @@ table
 		&-list
 			padding: 0 40px 0 40px
 			position: absolute
-			left: -115%
+			left: -100%
 			top: 0
 			width: 100%
 			transition: left .5s ease
 			height: 0
-			overflow: hidden
+			//overflow: hidden
 			min-height: 750px
 			&.active
 				left: 0
 				height: auto
+			&.active.sublist
+				left: 100%
+			&.active.sublist2
+				left: 200%
 			&_mouse
 				background: url(../img/mouse-mob.jpg) no-repeat bottom center
 

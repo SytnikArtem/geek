@@ -124,25 +124,23 @@ $(document).ready(function() {
     $('.mobile-left-overlay').addClass('active');
     checkActive();
   });
-  $('.mobile-left-item_enter').click(function(){
-    let number = $(this).data("number");
-    console.log(number);
-    // $('.mobile-left-list').eq(0).removeClass('active');
-    $(this).closest('.mobile-left-list').removeClass('active');
-    $('.mobile-left-list').eq(number).addClass('active');
+  $('.mobile-left-item_enter').click(function(e){
+    e.stopPropagation();
+    if ($(this).hasClass('mobile-left-item_first')) {
+      $(this).closest('.mobile-left-list').removeClass('active');
+      $(this).closest('.mobile-left-list').parent().closest('.mobile-left-list').addClass('active');
+      console.log('ss')
+    }
+    else {
+      $(this).closest('.mobile-left-list').removeClass('active');
+      $(this).children().addClass('active');
+      console.log('22')
+    }
+
     height = $('.mobile-left-list.active').height();
     $('.mobile-left-slide').css('height', height);
   });
-  // $('.mobile-left-item_js').click(function() {
-  //   $(this).closest('.mobile-left-list').removeClass('active');
-  //   $(this).find('.mobile-left-list').addClass('active');
-  // });
-  $('.mobile-left-item_first').click(function(){
-    $(this).closest('.mobile-left-list').removeClass('active')
-    $('.mobile-left-list').eq(0).addClass('active');
-    height = $('.mobile-left-list.active').height();
-    $('.mobile-left-slide').css('height', height);
-  });
+
   // Закрытие меню по клике вне его области
   $('.mobile-left-overlay').click(function(e){
     let elem = $(".mobile-left-menu");
