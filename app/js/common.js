@@ -295,9 +295,9 @@ $(document).ready(function() {
       $(this).closest('.filter-row').find('.filter-row-text').removeClass('active');
     }
   });
-  $('.filter-color').click(function() {
-    $(this).toggleClass('active');
-  });
+  // $('.filter-color').click(function() {
+  //   $(this).toggleClass('active');
+  // });
   // кнопки + и -
   number = +$('.item-number').val();
   $('.item-change').click(function() {
